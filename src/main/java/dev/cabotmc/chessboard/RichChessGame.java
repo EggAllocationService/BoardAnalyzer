@@ -1,6 +1,7 @@
 package dev.cabotmc.chessboard;
 
 import com.github.bhlangonijr.chesslib.*;
+import com.github.bhlangonijr.chesslib.move.Move;
 import dev.cabotmc.chessboard.engine.EngineProcess;
 
 public class RichChessGame {
@@ -18,7 +19,12 @@ public class RichChessGame {
         board.doMove(moveString);
         engine.analyzeCurrentPosition();
     }
-    public EngineProcess getEngine() {
+    public void move(Move m) {
+        board.doMove(m);
+        engine.analyzeCurrentPosition();
+
+    }
+    public EngineProcess getEngine()     {
         return engine;
     }
 }
